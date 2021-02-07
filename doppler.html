@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>doppler</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="centerdoppler-design-documentcenter"><center>Doppler Design Document</center></h2>
+<center>Author: Timothy Miranda  </center>
+<center>Course: SWENG 861  </center>
+<center>Date: 2/7/2021</center>
+<hr>
+<h3 id="centertable-of-contentscenter"><center>Table of Contents</center></h3>
+<ol>
+<li><a href="#background">Background</a></li>
+<li><a href="#usecase">Use Case</a>
+<ol>
+<li><a href="#usecase1">Use Case 1: Searching for an Artist</a></li>
+<li><a href="#usecase2">Use Case 2: Searching for a Song</a></li>
+</ol>
+</li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#requirementsimp">Appendix A: Requirements Implementation Plan</a></li>
+</ol>
+<p><a></a></p>
+<h3 id="background">1. Background</h3>
+<p>In 2019, the US music industry’s revenue <a href="https://www.billboard.com/articles/business/8551881/riaa-music-industry-2019-revenue-streaming-vinyl-digital-physical/">surpassed $11.9 billion</a>. A considerable contribution to this growth is streaming music services. These services rely on and employ a variety of APIs to meet customer demands. The class project for SWENG 861 is to explore REST APIs by building a client that consumes a service. Due to the impact that music has on the economy and the author of this paper’s affinity toward music, a music research tool called Doppler is under design. The name originates from physics where <a href="https://en.wikipedia.org/wiki/Doppler_effect">The Doppler Effect</a> describes how frequency changes based on the relative motion of a wave source and an observer. Just as the listener’s perception of sound can be changed based on their physical location in space, a similar effect occurs when the same song might sound different to the same person, depending on their social location.  At any one time, a person’s personality, culture, attitude, and personal preferences may change due to their circumstances and experiences.</p>
+<p><a></a></p>
+<h3 id="use-case">2. Use Case</h3>
+<p>The system addresses two use cases: (1) the case where a user wants to research an artist and (2) the case where the user wants to research a particular song.</p>
+<p><a></a></p>
+<h4 id="use-case-1-searching-for-an-artist">2.1 Use Case 1: Searching for an Artist</h4>
+<p>The user has a particular artist in mind.  First, the user opens the app by double-clicking it.  Then they are presented with the search form.  On the search form, the search type “artist” is the default selection, and does not require modification by the user.  Then the user inputs the name of the artist in the search field. The app then displays a list of artists that match the search criteria.  The user can then select the intended artist from the list.  The app then displays information about the artist.  A search form is located on each page to allow a user to initiate a new search at any time.</p>
+<p><a></a></p>
+<h4 id="use-case-2-searching-for-a-song">2.2 Use Case 2: Searching for a Song</h4>
+<p>The user has a particular song in mind.  First, the user opens the app by double-clicking it.  Then they are presented with the search form.  On the search form, the user must change the search type selection to “song.”  Then the user inputs the name of the song in the search field. The app then displays a list of songs that match the search criteria.  The user can then select the intended song from the list.  The app then displays information about the song.  A search form is located on each page to allow a user to initiate a new search at any time.</p>
+<p><a></a></p>
+<h3 id="requirements">3. Requirements</h3>
+<ul>
+<li>Req1 - Implement a web service client
+<ul>
+<li>Req1.1 - Use language of choice, language must work with selected client-side technologies</li>
+<li>Req1.2 - Use technologies capable of REST calls to external service API</li>
+<li>Req1.3 - Use REST api that enables access to music<br>
+information</li>
+<li>Req1.4 - Multiple REST api calls should be possible</li>
+<li>Req1.5 - Code should be well documented</li>
+</ul>
+</li>
+<li>Req2 - End-user can inquire about a song or a singer
+<ul>
+<li>Req2.1 - A user may search by song title</li>
+<li>Req2.2 - A user may search by artist name</li>
+</ul>
+</li>
+<li>Req3 - Program will output information regarding the input
+<ul>
+<li>Req3.1 - Output may include: singer name, composer name, date of release, lyrics, song title etc.</li>
+</ul>
+</li>
+<li>Req4 - Provide a command line or GUI interface
+<ul>
+<li>Req4.1 - Interface must provide input validation</li>
+<li>Req4.2 - Interface will allow user to select type of search</li>
+<li>Req4.3 - GUI is preferred</li>
+<li>Req4.4 - Interface must not be One-and-Done</li>
+</ul>
+</li>
+</ul>
+<p><a></a></p>
+<h3 id="appendix-a-requirements-implementation-plan">Appendix A: Requirements Implementation Plan</h3>
+<h4 id="req1---implement-a-web-service-client">Req1 - Implement a web service client</h4>
+
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Req1.1</th>
+<th>Req1.2</th>
+<th>Req1.3</th>
+<th>Req1.4</th>
+<th>Req1.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The application will be written in Javascript.</td>
+<td><font size="20px">x</font></td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Electron.js is the application framework.</td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The Musixmatch API will be used <a href="https://developer.musixmatch.com/">https://developer.musixmatch.com/</a></td>
+<td></td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td><font size="20px">x</font></td>
+<td></td>
+</tr>
+<tr>
+<td>Every function and section of developed code will be documented.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><font size="20px">x</font></td>
+</tr>
+</tbody>
+</table><h4 id="req2---end-user-can-inquire-about-a-song-or-a-singer">Req2 - End-user can inquire about a song or a singer</h4>
+
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Req2.1</th>
+<th>Req2.2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A user will be able to search by song title.  A list of song’s will be returned to the user allowing them to select the one they were looking for.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+</tr>
+<tr>
+<td>A user will be able to search by artist name.  A list of artists will be returned to user allowing them to select the artist they wanted to see.</td>
+<td></td>
+<td><font size="20px">x</font></td>
+</tr>
+</tbody>
+</table><h4 id="req3---program-will-output-information-regarding-the-input">Req3 - Program will output information regarding the input</h4>
+
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Req3.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The following will be displayed as appropriate to the request: artist name, date of release, lyrics, and song title.</td>
+<td><font size="20px">x</font></td>
+</tr>
+</tbody>
+</table><h4 id="req4---provide-a-command-line-or-gui-interface">Req4 - Provide a command line or GUI interface</h4>
+
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Req4.1</th>
+<th>Req4.2</th>
+<th>Req4.3</th>
+<th>Req4.4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML will be used for high level organization of interface elements.</td>
+<td></td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td></td>
+</tr>
+<tr>
+<td>CSS will be used to provide styles.</td>
+<td></td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td></td>
+</tr>
+<tr>
+<td>Vue.js will be used to bind data to interface.</td>
+<td></td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td><font size="20px">x</font></td>
+</tr>
+<tr>
+<td>Bootstrap will be the component library.</td>
+<td></td>
+<td><font size="20px">x</font></td>
+<td><font size="20px">x</font></td>
+<td></td>
+</tr>
+<tr>
+<td>The search field will need more than three characters to proceed.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The search field is a required field.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Searches must start with a letter.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User input will be escaped before transmitting.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Popper.js will be used to provide user feedback on input validation.</td>
+<td><font size="20px">x</font></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</body>
+
+</html>
